@@ -1,0 +1,1 @@
+web: java $JAVA_OPTS -cp FootballWeb/target/classes:target/dependency/* FootballWeb
