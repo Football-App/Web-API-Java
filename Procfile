@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -cp FootballWeb/target/classes:target/dependency/* FootballWeb
+web:    java $JAVA_OPTS -jar target/dependency/webapp-runner.jar --port $PORT target/*.war
