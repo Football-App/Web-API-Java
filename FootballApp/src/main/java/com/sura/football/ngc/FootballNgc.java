@@ -31,7 +31,7 @@ public class FootballNgc implements FootballNgcInt {
 		} catch (Exception e) {
 			// TODO: Manejo de la expeción en cara al front-end y en log lo técnico 
 			e.printStackTrace();
-			return null;
+			return null; //TODO: Mala práctica, falta mejorar el tratamiento de las excepciones 
 		}
 		
 	}
@@ -44,7 +44,7 @@ public class FootballNgc implements FootballNgcInt {
 		} catch (Exception e) {
 			// TODO: Manejo de la expeción en cara al front-end y en log lo técnico
 			e.printStackTrace();
-			return null;
+			return null; //TODO: Mala práctica, falta mejorar el tratamiento de las excepciones 
 		}
 	}
 
