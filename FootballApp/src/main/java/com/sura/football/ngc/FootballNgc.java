@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.sura.dominio.CiudadDTO;
 import com.sura.dominio.PartidoDTO;
 import com.sura.football.dao.FootballDaoInt;
+import com.sura.gencode.TGameInfo;
 
 @RestController
 @RequestMapping(value = "/football")
@@ -25,13 +26,26 @@ public class FootballNgc implements FootballNgcInt {
 
 	@RequestMapping(value = "/ciudades", method = RequestMethod.GET)
 	public List<CiudadDTO> getCuidades() {
-		return footballDao.getCiudades();
+		try {
+			return footballDao.getCiudades();
+		} catch (Exception e) {
+			// TODO: Manejo de la expeción en cara al front-end y en log lo técnico 
+			e.printStackTrace();
+			return null;
+		}
+		
 	}
 
 	@RequestMapping(value = "/partidosXciudad", method = RequestMethod.POST	)
-	public List<PartidoDTO> getPartidosXCiudad(@RequestParam("ciudad") String ciudad) {
+	public List<TGameInfo> getPartidosXCiudad(@RequestParam("ciudad") String ciudad) {
 		System.out.println("Cuidad: "+ciudad);
-		return footballDao.getPartidosXCiudad(ciudad);
+		try {
+			return footballDao.getPartidosXCiudad(ciudad);
+		} catch (Exception e) {
+			// TODO: Manejo de la expeción en cara al front-end y en log lo técnico
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 }

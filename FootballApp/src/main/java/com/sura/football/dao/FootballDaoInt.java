@@ -4,10 +4,11 @@ import java.util.List;
 
 import com.sura.dominio.CiudadDTO;
 import com.sura.dominio.PartidoDTO;
+import com.sura.gencode.TGameInfo;
 
 public interface FootballDaoInt {
 	
-	public List<CiudadDTO> getCiudades();
-	public List<PartidoDTO> getPartidosXCiudad(String ciudad);
+	public List<CiudadDTO> getCiudades() throws Exception;
+	public List<TGameInfo> getPartidosXCiudad(String ciudad) throws Exception;
 
 }
